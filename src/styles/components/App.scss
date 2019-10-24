@@ -1,19 +1,18 @@
 @import 'common/common';
 
 .App {
-
+  max-width: em(840);
+  margin: 0 auto;
 }
 
 .App-main {
-  max-width: em(840);
-  margin: 0 auto;
-  // background-color: white;
 }
 
 .App-header {
   display: flex;
   align-items: center;
   padding: 1em 0;
+  margin-bottom: 2em;
 
   .App-logo {
     margin-right: 1.2em;
@@ -28,17 +27,26 @@
 .App-heading {
   color: #F1C76B;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0;
 }
 
 .App-nav {
-  margin-left: auto;
-  margin-right: 0;
+  margin-left: 2em;
+  margin-right: auto;
 
   ul > li {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 1.6em;
+    margin-left: 2em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover, &.active {
+      color: white;
+    }
   }
 }
