@@ -11,7 +11,7 @@ function EmployeeRow(props) {
       <td>{employee.phone}</td>
       <td>{employee.department}</td>
       <td hidden={!props.canRemove}>
-        <button onClick={props.onRowRemove}>Remove</button>
+        <button onClick={(e) => props.onRowRemove(index, e)}>Remove</button>
       </td>
     </tr>
   );
@@ -27,8 +27,9 @@ export default class EmployeeTable extends React.Component {
     this.onRemoveEmployee = this.onRemoveEmployee.bind(this);
   }
 
-  onRemoveEmployee() {
-
+  onRemoveEmployee(index, event) {
+    employees.splice(index, 1);
+    this.forceUpdate();
   }
 
   render() {

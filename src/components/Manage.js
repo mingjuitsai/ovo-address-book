@@ -44,13 +44,12 @@ export default class Manage extends React.Component {
   }
 
   render() {
-    const formActive = this.state.formActive;
     const newEmpolyee = this.state.newEmpolyee;
 
     return (
       <div className="Manage">
         <header className="Manage-header">
-          <h1 class="Manage-title">Add New Empolyee</h1>
+          <h1 className="Manage-title">Add New Empolyee</h1>
         </header>
         <div className="Manage-form">
           <form ref={this.newEmpolyeeForm}>
@@ -87,7 +86,7 @@ export default class Manage extends React.Component {
           </form>
         </div>
 
-        <EmployeeTable canRemove={false} />
+        <EmployeeTable canRemove={true} />
       </div>
     )
   }
