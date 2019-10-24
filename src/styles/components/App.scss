@@ -1,0 +1,44 @@
+@import 'common/common';
+
+.App {
+
+}
+
+.App-main {
+  max-width: em(840);
+  margin: 0 auto;
+  // background-color: white;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  padding: 1em 0;
+
+  .App-logo {
+    margin-right: 1.2em;
+  }
+}
+
+.App-logo {
+  width: 3em;
+  height: 3em;
+}
+
+.App-heading {
+  color: #F1C76B;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.App-nav {
+  margin-left: auto;
+  margin-right: 0;
+
+  ul > li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1.6em;
+  }
+}
