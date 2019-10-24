@@ -1,0 +1,13 @@
+.EmployeeTable {
+	width: 100%;
+	border-spacing: 0;
+
+	th {
+		color: $accent-color;
+		text-align: left;
+	}
+
+	th, td {
+		padding: .2em 0;
+	}
+}

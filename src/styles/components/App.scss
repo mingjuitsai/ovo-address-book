@@ -1,5 +1,3 @@
-@import 'common/common';
-
 .App {
   max-width: em(840);
   margin: 0 auto;
@@ -25,7 +23,7 @@
 }
 
 .App-heading {
-  color: #F1C76B;
+  color: $accent-color;
   text-transform: uppercase;
   font-size: 1.2em;
   margin: 0;

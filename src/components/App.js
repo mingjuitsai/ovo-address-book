@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../assets/management.svg';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
@@ -16,11 +15,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 class="App-heading">
+        <h1 className="App-heading">
           Retail Management
         </h1>
 
-        <nav class="App-nav">
+        <nav className="App-nav">
           <ul>
             <li>
               <NavLink to="/manage">&#x262F; Manage</NavLink>
@@ -31,7 +30,7 @@ function App() {
           </ul>
         </nav>
       </header>
-      <main class="App-main">
+      <main className="App-main">
         <Switch>
             <Route exact path="/">
               <Redirect to="/manage" />
