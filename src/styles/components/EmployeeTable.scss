@@ -10,4 +10,27 @@
 	th, td {
 		padding: .2em 0;
 	}
+
+	tr:hover td {
+		background-color: rgba(white, .1);
+	}
+
+
+	.canSort {
+		position: relative;
+		cursor: pointer;
+
+		&:hover {
+			color: lighten($accent-color, 8%);
+		}
+
+		&::after {
+			content: "\026AC";
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 .7em;
+			font-size: .7em;
+			line-height: 1;
+		}
+	}
 }

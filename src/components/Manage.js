@@ -67,6 +67,7 @@ export default class Manage extends React.Component {
                 <input value={newEmpolyee.phone} onChange={this.onNewEmployeeInput} type="text" id="phone" name="phone" required/>
               </div>
               <div className="inputCell">
+                <label htmlFor="department">Department</label>
                 <select onChange={this.onNewEmployeeInput} name="department" value={newEmpolyee.department} required>
                   <option value="" disabled>Select department</option>
                   <option value="Garden">Garden</option>

@@ -6,6 +6,12 @@
 /**
  * Component
  */
+
+// Global DOM component
+@import "components/buttons";
+@import "components/forms";
+
+// React component
 @import "components/App";
 @import "components/Manage";
 @import "components/EmployeeTable";

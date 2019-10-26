@@ -23,12 +23,58 @@ function EmployeeRow(props) {
 export default class EmployeeTable extends React.Component {
   constructor(props) {
     super(props);
-
     this.onRemoveEmployee = this.onRemoveEmployee.bind(this);
+    this.sortEmployeesByFirstName = this.sortEmployeesByFirstName.bind(this);
+    this.sortEmployeesByLastName = this.sortEmployeesByLastName.bind(this);
   }
 
   onRemoveEmployee(index, event) {
     employees.splice(index, 1);
+    this.forceUpdate();
+  }
+
+  sortEmployeesByFirstName() {
+    employees.sort((former, latter) => {
+      let nameFormer = former.firstName.toLowerCase();
+      let nameLatter = latter.firstName.toLowerCase();
+      if(nameFormer < nameLatter) {
+        return -1;
+      }
+      if(nameFormer > nameLatter) {
+        return 1;
+      }
+      return 0;
+    });
+    this.forceUpdate();
+  }
+
+  sortEmployeesByLastName() {
+    employees.sort((former, latter) => {
+      let nameFormer = former.lastName.toLowerCase();
+      let nameLatter = latter.lastName.toLowerCase();
+      if(nameFormer < nameLatter) {
+        return -1;
+      }
+      if(nameFormer > nameLatter) {
+        return 1;
+      }
+      return 0;
+    });
+    this.forceUpdate();
+  }
+
+  sortEmployeesByFirstName() {
+    employees.sort((former, latter) => {
+      let nameFormer = former.firstName.toLowerCase();
+      let nameLatter = latter.firstName.toLowerCase();
+      if(nameFormer < nameLatter) {
+        return -1;
+      }
+      if(nameFormer > nameLatter) {
+        return 1;
+      }
+      return 0;
+    });
     this.forceUpdate();
   }
 
@@ -38,16 +84,16 @@ export default class EmployeeTable extends React.Component {
       <table className="EmployeeTable">
         <thead>
           <tr>
-            <th>
+            <th className="canSort" onClick={this.sortEmployeesByFirstName}>
               First Name
             </th>
-            <th>
+            <th className="canSort" onClick={this.sortEmployeesByLastName}>
               Last Name
             </th>
             <th>
               Phone
             </th>
-            <th>
+            <th className="canSort" onClick={this.sortEmployeesByFirstName}>
               Department
             </th>
             <th>
