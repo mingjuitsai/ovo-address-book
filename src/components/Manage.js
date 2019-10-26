@@ -1,11 +1,12 @@
 import React from 'react';
-import employees from '../data/employees';
+import EMPLOYEES from './../data/empolyees';
 import EmployeeTable from './EmployeeTable';
 
 
 export default class Manage extends React.Component {
   constructor(props) {
     super(props);
+    this.onRemoveEmployee = this.onRemoveEmployee.bind(this);
     this.onNewEmployeeInput = this.onNewEmployeeInput.bind(this);
     this.onNewEmployeeSubmit = this.onNewEmployeeSubmit.bind(this);
     this.state = {
@@ -24,7 +25,7 @@ export default class Manage extends React.Component {
     const isFormValid = this.newEmpolyeeForm.current.checkValidity();
 
     if(isFormValid) {
-      employees.unshift({...this.state.newEmpolyee});
+      EMPLOYEES.unshift({...this.state.newEmpolyee});
       // Refresh
       this.setState({
         newEmpolyee: {
@@ -35,6 +36,11 @@ export default class Manage extends React.Component {
         }
       });
     }
+  }
+
+  onRemoveEmployee(result) {
+    EMPLOYEES.splice(0, EMPLOYEES.length, ...result);
+    console.log(EMPLOYEES, result);
   }
 
   onNewEmployeeInput(event) {
@@ -87,7 +93,7 @@ export default class Manage extends React.Component {
           </form>
         </div>
 
-        <EmployeeTable canRemove={true} />
+        <EmployeeTable employees={EMPLOYEES} onRemoveEmployee={this.onRemoveEmployee} canRemove={true} />
       </div>
     )
   }

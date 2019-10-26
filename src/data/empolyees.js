@@ -1,4 +1,4 @@
-export default [{
+let EMPLOYEES = [{
   "firstName": "Meris",
   "lastName": "Ivanchikov",
   "phone": "126-524-5425",
@@ -74,3 +74,6 @@ export default [{
   "phone": "789-132-4127",
   "department": "Toys"
 }];
+
+
+export default EMPLOYEES;

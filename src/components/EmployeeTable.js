@@ -1,5 +1,5 @@
 import React from 'react';
-import employees from '../data/employees';
+import Fuse from 'fuse.js';
 
 
 function EmployeeRow(props) {
@@ -23,33 +23,74 @@ function EmployeeRow(props) {
 export default class EmployeeTable extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      initialEmployees: [],
+      computedEmpolyees: []
+    };
     this.onRemoveEmployee = this.onRemoveEmployee.bind(this);
+    this.searchFilterEmployees = this.searchFilterEmployees.bind(this);
     this.sortEmployeesByFirstName = this.sortEmployeesByFirstName.bind(this);
     this.sortEmployeesByLastName = this.sortEmployeesByLastName.bind(this);
+    this.sortEmployeesByDepartment = this.sortEmployeesByDepartment.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      initialEmployees: this.props.employees,
+      computedEmpolyees: this.props.employees
+    });
+  }
+
+  componentDidUpdate() {
+    // this.onSearchEmployees(this.props.search, this.props.searchBy);
   }
 
   onRemoveEmployee(index, event) {
-    employees.splice(index, 1);
-    this.forceUpdate();
+    let result = this.state.computedEmpolyees.slice();
+    result.splice(index, 1);
+    this.props.onRemoveEmployee(result);
+    this.setState({
+      computedEmpolyees: result
+    });
   }
 
-  sortEmployeesByFirstName() {
-    employees.sort((former, latter) => {
-      let nameFormer = former.firstName.toLowerCase();
-      let nameLatter = latter.firstName.toLowerCase();
-      if(nameFormer < nameLatter) {
+  searchFilterEmployees(empolyees, search, searchBy) {    
+    let keys;
+    if(!searchBy || !search) return empolyees;
+
+    if(searchBy === 'name') {
+      keys = ['firstName', 'lastName'];
+    }
+    if(searchBy === 'department') {
+      keys = ['department'];
+    }
+    let options = {
+      keys
+    }
+    let fuse = new Fuse(empolyees, options);
+    let result = fuse.search(search);
+    return result;
+  }
+
+  sortEmployeesByDepartment() {
+    let result = this.state.computedEmpolyees.sort((former, latter) => {
+      let departmentFormer = former.department.toLowerCase();
+      let departmentLatter = latter.department.toLowerCase();
+      if(departmentFormer < departmentLatter) {
         return -1;
       }
-      if(nameFormer > nameLatter) {
+      if(departmentFormer > departmentLatter) {
         return 1;
       }
       return 0;
     });
-    this.forceUpdate();
+    this.setState({
+      computedEmpolyees: result
+    });
   }
 
   sortEmployeesByLastName() {
-    employees.sort((former, latter) => {
+    let result = this.state.computedEmpolyees.sort((former, latter) => {
       let nameFormer = former.lastName.toLowerCase();
       let nameLatter = latter.lastName.toLowerCase();
       if(nameFormer < nameLatter) {
@@ -60,11 +101,13 @@ export default class EmployeeTable extends React.Component {
       }
       return 0;
     });
-    this.forceUpdate();
+    this.setState({
+      computedEmpolyees: result
+    });
   }
 
   sortEmployeesByFirstName() {
-    employees.sort((former, latter) => {
+    let result = this.state.computedEmpolyees.sort((former, latter) => {
       let nameFormer = former.firstName.toLowerCase();
       let nameLatter = latter.firstName.toLowerCase();
       if(nameFormer < nameLatter) {
@@ -75,10 +118,16 @@ export default class EmployeeTable extends React.Component {
       }
       return 0;
     });
-    this.forceUpdate();
+    this.setState({
+      computedEmpolyees: result
+    });
   }
 
   render() {
+    let computedEmpolyees = this.state.computedEmpolyees;
+    let search = this.props.search;
+    let searchBy = this.props.searchBy;
+    const searchFilteredEmployees = this.searchFilterEmployees(computedEmpolyees, search, searchBy);
 
     return (
       <table className="EmployeeTable">
@@ -93,7 +142,7 @@ export default class EmployeeTable extends React.Component {
             <th>
               Phone
             </th>
-            <th className="canSort" onClick={this.sortEmployeesByFirstName}>
+            <th className="canSort" onClick={this.sortEmployeesByDepartment}>
               Department
             </th>
             <th>
@@ -102,7 +151,7 @@ export default class EmployeeTable extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <EmployeeRow employees={employees} canRemove={this.props.canRemove} onRowRemove={this.onRemoveEmployee} />
+          <EmployeeRow employees={searchFilteredEmployees} canRemove={this.props.canRemove} onRowRemove={this.onRemoveEmployee} />
         </tbody>
       </table>
     )
