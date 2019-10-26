@@ -65,7 +65,8 @@ export default class EmployeeTable extends React.Component {
       keys = ['department'];
     }
     let options = {
-      keys
+      keys,
+      threshold: 0.5,
     }
     let fuse = new Fuse(empolyees, options);
     let result = fuse.search(search);

@@ -11,6 +11,11 @@
 		padding: .2em 0;
 	}
 
+	td {
+		transition: background-color 80ms ease-out;
+		cursor: w-resize;
+	}
+
 	tr:hover td {
 		background-color: rgba(white, .1);
 	}

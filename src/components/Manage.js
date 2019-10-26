@@ -40,7 +40,6 @@ export default class Manage extends React.Component {
 
   onRemoveEmployee(result) {
     EMPLOYEES.splice(0, EMPLOYEES.length, ...result);
-    console.log(EMPLOYEES, result);
   }
 
   onNewEmployeeInput(event) {
