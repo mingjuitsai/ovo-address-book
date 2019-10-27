@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9f477071c1b43907fcaee5dee39ac5b0",
+    "revision": "ff0f79f6b2c08196375aa764cb96e394",
     "url": "/ovo-address-book/index.html"
   },
   {
-    "revision": "2f7ad0a181ee881d113d",
+    "revision": "a62a5c917c455e446176",
     "url": "/ovo-address-book/static/css/main.d6b26b12.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ovo-address-book/static/js/2.c0f8546f.chunk.js"
   },
   {
-    "revision": "2f7ad0a181ee881d113d",
-    "url": "/ovo-address-book/static/js/main.2d529009.chunk.js"
+    "revision": "a62a5c917c455e446176",
+    "url": "/ovo-address-book/static/js/main.d8a88d56.chunk.js"
   },
   {
     "revision": "31f0cbd141eeb34a66a3",

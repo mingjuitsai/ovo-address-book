@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ovo-address-book/precache-manifest.5b1471878057a7f5c61d8bc8d3aea74c.js"
+  "/ovo-address-book/precache-manifest.009e4c8b94751cbc836f34f6ff2872a9.js"
 );
 
 self.addEventListener('message', (event) => {

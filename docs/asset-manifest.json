@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ovo-address-book/static/css/main.d6b26b12.chunk.css",
-    "main.js": "/ovo-address-book/static/js/main.2d529009.chunk.js",
-    "main.js.map": "/ovo-address-book/static/js/main.2d529009.chunk.js.map",
+    "main.js": "/ovo-address-book/static/js/main.d8a88d56.chunk.js",
+    "main.js.map": "/ovo-address-book/static/js/main.d8a88d56.chunk.js.map",
     "runtime-main.js": "/ovo-address-book/static/js/runtime-main.87c4c07d.js",
     "runtime-main.js.map": "/ovo-address-book/static/js/runtime-main.87c4c07d.js.map",
     "static/js/2.c0f8546f.chunk.js": "/ovo-address-book/static/js/2.c0f8546f.chunk.js",
     "static/js/2.c0f8546f.chunk.js.map": "/ovo-address-book/static/js/2.c0f8546f.chunk.js.map",
     "index.html": "/ovo-address-book/index.html",
-    "precache-manifest.5b1471878057a7f5c61d8bc8d3aea74c.js": "/ovo-address-book/precache-manifest.5b1471878057a7f5c61d8bc8d3aea74c.js",
+    "precache-manifest.009e4c8b94751cbc836f34f6ff2872a9.js": "/ovo-address-book/precache-manifest.009e4c8b94751cbc836f34f6ff2872a9.js",
     "service-worker.js": "/ovo-address-book/service-worker.js",
     "static/css/main.d6b26b12.chunk.css.map": "/ovo-address-book/static/css/main.d6b26b12.chunk.css.map",
     "static/media/management.svg": "/ovo-address-book/static/media/management.1427b09d.svg"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.87c4c07d.js",
     "static/js/2.c0f8546f.chunk.js",
     "static/css/main.d6b26b12.chunk.css",
-    "static/js/main.2d529009.chunk.js"
+    "static/js/main.d8a88d56.chunk.js"
   ]
 }
