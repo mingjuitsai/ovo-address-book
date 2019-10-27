@@ -32,11 +32,11 @@ function App() {
       </header>
       <main className="App-main">
         <Switch>
-            <Route exact path="%PUBLIC_URL%">
-              <Redirect to="%PUBLIC_URL%/manage" />
+            <Route exact path="/">
+              <Redirect to="/manage" />
             </Route>
-            <Route exact path="%PUBLIC_URL%/manage" component={Manage} />
-            <Route exact path="%PUBLIC_URL%/search" component={Search} />
+            <Route exact path="/manage" component={Manage} />
+            <Route exact path="/search" component={Search} />
         </Switch>
       </main>
     </div>
