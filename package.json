@@ -2,6 +2,7 @@
   "name": "ovo-address-book",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://ray-tsai.com/ovo-address-book/",
   "dependencies": {
     "fuse.js": "^3.4.5",
     "node-sass": "^4.13.0",
